@@ -1,0 +1,21 @@
+O princípio nos diz que devemos construir classes com apenas um objetivo. 
+Se sua classe precisa de mais de uma razão para mudar, ela está fazendo mais de uma coisa — quebrando esse principio.
+
+class Usuario
+{
+   public string Nome { get; private set; }
+   public string Email { get; private set; }
+   public Usuario(string nome, string email)
+   {
+      this.Nome = nome;
+      this.Email = email;
+   }
+   public void PersistirUsuario()
+   {
+      SqlConnection conexao = new SqlConnection("string de conexao");
+      SqlCommand cmd = new SqlCommand();
+      // cmd.CommandText...
+      // ...
+      // ..
+      conexao.Close();
+   }
